@@ -1,49 +1,28 @@
 import React, { useEffect, useState } from "react";
 import Table from "../../Components/Table/Table";
 import GetInfo from "../../Services/GetInfo";
-function Defi({handleFAvorites}) {
-    const [data, setData] = useState([]);
-
-
-
-
-// load data
-const loadData = () => {
-  let dataTmp = data;
-
-    let defi = []
-
-  // get data
-  GetInfo.find()
+function Defi({ handleFAvorites }) {
+  const [data, setData] = useState([]);
+  const loadData = () => {
+    let defi = [];
+    GetInfo.find()
       .then(function (response) {
-       
-      if (
-        response !== null 
-       
-      ) {
-         defi=  response.filter(item =>item.Id%2 !=0)
-        setData([...dataTmp , ...defi]);
+        if (response !== null) {
+          defi = response.filter((item) => item.Id % 2 !== 0);
+          setData([...data, ...defi]);
+        }
+      })
+      .catch(function (error) {});
+  };
 
-       
-      }
- 
+  useEffect(() => {
+    loadData();
+  }, []);
 
-  
-    })
-    .catch(function (error) {
-    
-    });
-  
-};
-
-useEffect(() => {
-  loadData();
-}, []);
-
-
-    return (<div>
-        
-        <Table data={data} handleFAvorites={ handleFAvorites} />
-    </div>)
+  return (
+    <div>
+      <Table data={data} handleFAvorites={handleFAvorites} itemsPerPage={5} />
+    </div>
+  );
 }
 export default Defi;
