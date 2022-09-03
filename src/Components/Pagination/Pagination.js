@@ -67,22 +67,5 @@ function UsePagination(initialState) {
     nextPage: goToNextPage,
     changePage,
   };
-  //   return (
-  //     <div>
-  //       <a onClick={goToPrevPage}>prev</a>
-  //       <a onClick={goToNextPage}>next</a>
-  //       <ul>
-  //         {Pagination.map((page) => {
-  //           if (!page.ellipsis) {
-  //             return (
-  //               <li key={page.id}>
-  //                 <a onChange={(e) => changePage(page.id, e)}>{page.id}</a>
-  //               </li>
-  //             );
-  //           }
-  //         })}
-  //       </ul>
-  //     </div>
-  //   );
 }
 export default UsePagination;
