@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 function UsePagination(initialState) {
   const { data, startFrom, itemsPerPage } = initialState;
-  const perPage = 5;
+  const perPage = itemsPerPage ? itemsPerPage : 10;
   const pages = Math.ceil(data.length / perPage);
   const Pagination = [];
   const [currentPage, setCurrentPage] = useState(

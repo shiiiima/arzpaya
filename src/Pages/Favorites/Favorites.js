@@ -19,7 +19,7 @@ function Favorites({ fav }) {
   const favoriteList = data.filter((item) => fav.includes(item.Id));
   return (
     <div>
-      <Table data={favoriteList} itemsPerPage={5} />
+      <Table data={favoriteList} itemsPerPage={3} />
     </div>
   );
 }

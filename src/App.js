@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import GetInfo from "./Services/GetInfo";
+import React, { useState } from "react";
 import "./App.css";
 import ToggleButton from "./Components/Toggle/Toggle";
 import {
@@ -8,7 +7,7 @@ import {
   GlobalStyles,
 } from "./Components/Themes/Themes";
 import styled, { ThemeProvider } from "styled-components";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import Defaultt from "./Pages/Default/Default";
 import Defi from "./Pages/Defi/Defi";
@@ -47,31 +46,23 @@ function App() {
             <ToggleButton toggle={toggle} ThemeToggle={ThemeToggle} />
 
             <Header />
-            <Routes>
-              <Route
-                path="/"
-                exact
-                element={
-                  <Defaultt
-                    iconFAv={iconFAv}
-                    handleFAvorites={handleFAvorites}
-                  />
-                }
-              />
-              <Route
-                path={"/defi"}
-                element={<Defi handleFAvorites={handleFAvorites} />}
-              />
-              <Route
-                path="/nft"
-                element={<NFT handleFAvorites={handleFAvorites} />}
-              />
-              <Route
-                path="/metaverse"
-                element={<Metaverse handleFAvorites={handleFAvorites} />}
-              />
-              <Route path="/favorites" element={<Favorites fav={fav} />} />
-            </Routes>
+            <Switch>
+              <Route path="/" exact component={Defaultt}>
+                <Defaultt handleFAvorites={handleFAvorites} />
+              </Route>
+              <Route path={"/defi"}>
+                <Defi handleFAvorites={handleFAvorites} />
+              </Route>
+              <Route path={"/nft"}>
+                <NFT handleFAvorites={handleFAvorites} />
+              </Route>
+              <Route path={"/metaverse"}>
+                <Metaverse handleFAvorites={handleFAvorites} />
+              </Route>
+              <Route path={"/favorites"}>
+                <Favorites fav={fav} />
+              </Route>
+            </Switch>
           </Router>
         </StyledApp>
       </ThemeProvider>

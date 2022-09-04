@@ -4,6 +4,7 @@ import GetInfo from "../../Services/GetInfo";
 
 const Defaultt = ({ iconFAv, handleFAvorites }) => {
   const [data, setData] = useState([]);
+
   const loadData = () => {
     let dataTmp = data;
     GetInfo.find()
@@ -24,7 +25,7 @@ const Defaultt = ({ iconFAv, handleFAvorites }) => {
         iconFAv={iconFAv}
         data={data}
         handleFAvorites={handleFAvorites}
-        itemsPerPage={5}
+        itemsPerPage={10}
         startFrom={25}
       />
     </div>

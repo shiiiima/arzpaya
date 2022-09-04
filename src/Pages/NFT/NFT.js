@@ -22,7 +22,7 @@ function NFT({ handleFAvorites }) {
 
   return (
     <div>
-      <Table data={data} handleFAvorites={handleFAvorites} itemsPerPage={5} />
+      <Table data={data} handleFAvorites={handleFAvorites} itemsPerPage={10} />
     </div>
   );
 }
