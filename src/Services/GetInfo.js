@@ -3,7 +3,7 @@ import General from "../Utils/General";
 export default {
   find: async function () {
     try {
-      console.log("hekkk");
+
       const response = await axios({
         url: General.siteUrl + "/general/CurrencyType",
         method: "Get",

@@ -21,7 +21,7 @@ function Defi({ handleFAvorites }) {
 
   return (
     <div>
-      <Table data={data} handleFAvorites={handleFAvorites} itemsPerPage={10} />
+      <Table data={data} handleFAvorites={handleFAvorites} />
     </div>
   );
 }

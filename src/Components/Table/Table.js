@@ -55,8 +55,8 @@ function Table({ data, handleFAvorites, itemsPerPage, startFrom }) {
           </TR>
         </THEAD>
         <TBODY>
-          {slicedData != null && data.length > 0
-            ? slicedData.map((item, index) => {
+          {data != null && data.length > 0
+            ? data.map((item, index) => {
                 return (
                   <TR key={item.Id}>
                     <div
@@ -74,7 +74,7 @@ function Table({ data, handleFAvorites, itemsPerPage, startFrom }) {
               })
             : null}
         </TBODY>
-        <div className="pagination-holder">
+        {/* <div className="pagination-holder">
           <a onClick={prevPage}>prev</a>
           <ul>
             {Pagination.map((page) => {
@@ -88,7 +88,7 @@ function Table({ data, handleFAvorites, itemsPerPage, startFrom }) {
             })}
           </ul>
           <a onClick={nextPage}>next</a>
-        </div>
+        </div> */}
       </Table>
     </div>
   );

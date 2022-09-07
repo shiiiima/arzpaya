@@ -21,13 +21,7 @@ const Defaultt = ({ iconFAv, handleFAvorites }) => {
 
   return (
     <div className="">
-      <Table
-        iconFAv={iconFAv}
-        data={data}
-        handleFAvorites={handleFAvorites}
-        itemsPerPage={10}
-        startFrom={25}
-      />
+      <Table iconFAv={iconFAv} data={data} handleFAvorites={handleFAvorites} />
     </div>
   );
 };
